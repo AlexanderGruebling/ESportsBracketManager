@@ -1,0 +1,18 @@
+<form name="$ctrl.tournamentForm" ng-submit="$ctrl.submitForm()">
+    <md-input-container>
+        <label>Select a tournament</label>
+        <md-select ng-model="$ctrl.tournamentForm.tournamentName">
+            <md-option ng-repeat="tournament in $ctrl.tournaments" value="{{tournament.id}}">{{tournament.name}}</md-option>
+        </md-select>
+    </md-input-container>
+    <md-button type="submit" class="md-primary md-raised">Submit</md-button>
+    <div layout="column" layout-align="center center">
+        <h1></h1>
+        <div ng-repeat="player in $ctrl.players">
+            <player  name="{{player.username}}"></player>
+            <p ng-if="$index % 2 == 0" style="margin: auto;"> vs. </p>
+            <br ng-if="!($index % 2 == 0)"/>
+        </div>
+    </div>
+</form>
+

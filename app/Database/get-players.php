@@ -30,8 +30,15 @@ if(isset($_GET['tournament'])){
 }
 
 header('Content-type: application/json');
-shuffle($GLOBALS['players']);
-echo json_encode($GLOBALS['players']);
+if(sizeof($GLOBALS['players']) === 8 ||
+    sizeof($GLOBALS['players']) === 16 ||
+    sizeof($GLOBALS['players']) === 32 ||
+    sizeof($GLOBALS['players']) === 64){
+    shuffle($GLOBALS['players']);
+    echo json_encode($GLOBALS['players']);
+}else{
+    echo json_encode('Playercount does not match 8, 16, 32 or 64!');
+}
 
 
 /*foreach ($GLOBALS['players'] as $product) {
