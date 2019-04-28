@@ -1,0 +1,20 @@
+{
+    "name": "agrue/e-sports-bracket-manager",
+    "description": "An E-Sports Bracket Manager with a DoctrineORM Database, a PHP-Controller who matches players against each other and a AngularJS/Fluid Front-End",
+    "type": "project",
+    "authors": [
+        {
+            "name": "AlexanderGruebling",
+            "email": "6138@htl.rennweg.at"
+        }
+    ],
+    "require": {
+        "doctrine/dbal": "^2.9",
+        "doctrine/orm": "^2.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "HTL3R\\ESportsBracketManager\\": "src/"
+        }
+    }
+}
